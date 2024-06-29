@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: wil-playground
-        image: arm64v8/httpd
+        image: arm64v8/nginx
         ports:
         - containerPort: 80
 
