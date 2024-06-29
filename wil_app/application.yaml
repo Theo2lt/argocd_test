@@ -6,7 +6,7 @@ metadata:
   labels:
     app: wil-playground
 spec:
-  replicas: 5
+  replicas: 3
   selector:
     matchLabels:
       app: wil-playground
@@ -26,10 +26,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: wil-playground
+  name: svc-wil
+  namespace: dev
 spec:
-  ports:
-  - port: 80
-    protocol: TCP
   selector:
     app: wil-playground
+  ports:
+    - protocol: TCP
+      port: 8888
+      targetPort: 80
+  type: LoadBalancer
