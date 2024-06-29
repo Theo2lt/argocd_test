@@ -6,7 +6,7 @@ metadata:
   labels:
     app: wil-playground
 spec:
-  replicas: 3
+  replicas: 5
   selector:
     matchLabels:
       app: wil-playground
@@ -29,7 +29,7 @@ metadata:
   name: wil-playground
 spec:
   ports:
-  - port: 8080
+  - port: 80
     targetPort: 8080
     protocol: TCP
   selector:
